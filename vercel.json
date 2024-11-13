@@ -5,8 +5,8 @@
 }],
 "hooks": {
     "build": [
-      "python manage.py tailwind build",  // Ensure Tailwind CSS is compiled
-      "python manage.py collectstatic --noinput"  // Collect all static files
+      "python manage.py tailwind build",  
+      "python manage.py collectstatic --noinput" 
     ]
 
 }
