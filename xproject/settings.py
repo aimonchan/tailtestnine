@@ -125,8 +125,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = '/static/'
+
+# Add 'theme/static' to STATICFILES_DIRS to tell Django to include static files from 'theme'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Add your root static directory
+    BASE_DIR / "theme/static",  # Include the theme app static directory
+]
+
 # You may need this for Vercel
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
