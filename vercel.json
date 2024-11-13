@@ -1,12 +1,15 @@
-{"builds":[{
-    "src":"xproject/settings.py",
-    "use":"@vercel/python",
-    "config":{"maxLambdaSize":"15mb","runtime":"python 3.9"}
-}],
-"hooks": {
-    "build": [
-      "python manage.py tailwind build",  
-      "python manage.py collectstatic --noinput" 
-    ]
-
+{
+  "builds": [
+    {
+      "src": "xproject/settings.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python 3.9"
+      }
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "xproject.settings"
+  }
 }
