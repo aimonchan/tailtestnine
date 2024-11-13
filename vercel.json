@@ -1,13 +1,12 @@
 {"builds":[{
-    "src":"xproject/wsgi.py",
+    "src":"xproject/settings.py",
     "use":"@vercel/python",
     "config":{"maxLambdaSize":"15mb","runtime":"python 3.9"}
 }],
-"routes":[
-    {
-        "src":"/(.*)",
-        "dest":"xproject/wsgi.py"
-    }
-]
+"hooks": {
+    "build": [
+      "python manage.py tailwind build",  // Ensure Tailwind CSS is compiled
+      "python manage.py collectstatic --noinput"  // Collect all static files
+    ]
 
 }
